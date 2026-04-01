@@ -758,6 +758,16 @@ const SAVE_VERSION = 3;
 const LEVELS=[
   {size:6,theme:'t1',topic:'الحيوانات 🐾',words:['أسد','نمر','ثعلب','ذئب','حصان','فيل']},
   {size:6,theme:'t2',topic:'الفواكه 🍎',words:['تفاح','عنب','مانجو','برتقال','موز','خوخ']},
+  {size:6,theme:'t1',topic:'بدون نقط 🔴',words:['طور','سور','لوح','حوت','رسم','سعد']},
+  {size:6,theme:'t1',topic:'أرقام 1-6 🔢',words:['واحد','اثنان','ثلاثة','اربعة','خمسة','ستة']},
+  {size:6,theme:'t1',topic:'عملات 💱',words:['دولار','يورو','جنيه','ريال','درهم','دينار']},
+  {size:6,theme:'t1',topic:'أحجار كريمة 💎',words:['الماس','زمرد','ياقوت','لؤلؤ','مرجان','عقيق']},
+  {size:6,theme:'t1',topic:'شهور السنة 📆',words:['يناير','فبراير','مارس','ابريل','مايو','يونيو']},
+  {size:6,theme:'t1',topic:'اتجاهات 🧭',words:['شمال','جنوب','شرق','غرب','فوق','تحت']},
+  {size:6,theme:'t1',topic:'العناصر 🔥',words:['نار','ماء','تراب','هواء','ثلج','رعد']},
+  {size:6,theme:'t1',topic:'مشاعر ❤️',words:['فرح','حزن','غضب','خوف','حب','امل']},
+  {size:6,theme:'t1',topic:'متناظرة 🪞',words:['باب','تات','نخلة؟','دود','طيط','نون']},
+  {size:6,theme:'t1',topic:'ألوان أساسية 🎨',words:['احمر','ازرق','اخضر','اصفر','اسود','ابيض']},
   {size:6,theme:'t3',topic:'الألوان 🎨',words:['أحمر','أصفر','أخضر','أزرق','أبيض','وردي']},
   {size:6,theme:'t4',topic:'المدن 🏙️',words:['القاهرة','دبي','الرياض','بيروت','عمان','تونس']},
   {size:6,theme:'t5',topic:'الطعام 🍽️',words:['خبز','أرز','لحم','سمك','جبنة','بيض']},
@@ -2063,13 +2073,11 @@ function bombExplode(){
 // ── صندوق الغموض: جوائز نادرة صعبة الجمع ──
 const MYSTERY_PRIZES=[
   {emoji:'🪙', text:'+20 عملة',           action:()=>addCoins(20)},
+  {emoji:'🪙', text:'+30 عملة',           action:()=>addCoins(30)},
   {emoji:'💡', text:'تلميح + كشف',        action:()=>{ ownedHints+=1; ownedReveals+=1; updateInventoryUI(); }},
   {emoji:'❄️', text:'تجميدان للوقت',      action:()=>{ ownedFreezes+=2; updateInventoryUI(); }},
   {emoji:'👁️', text:'كشف + تجميد روبوت', action:()=>{ ownedReveals+=1; ownedFreezeRobots+=1; updateInventoryUI(); }},
-  {emoji:'⭐', text:'XP×2 لمرحلتين',      action:()=>{ doubleXpCharges+=2; }},
-  {emoji:'❤️', text:'قلب واحد مجاني',    action:()=>gainHeart(1)},
-  {emoji:'💎', text:'+80 خبرة',           action:()=>addXp(80)},
-  {emoji:'🎁', text:'مضاعفة المكافآت',   action:()=>{ doubleRewards=true; }},
+  {emoji:'🪙', text:'+10 عملة',           action:()=>addCoins(10)}, 
 ];
 let _mysteryPrize=null;
 let _mysteryCallback=null;
@@ -3119,8 +3127,8 @@ setTimeout(checkUrlReward,2000);
 // ══════════════════════════════════════════════
 
 // ⚠️ ضع رابط صفحة المكافأة هنا ↓
-const REWARD_PAGE_URL='https://amineamimi051-rgb.github.io/Germain/reward.html';
-const REWARD_COOLDOWN=6*60*60*1000; // 6 ساعات
+const REWARD_PAGE_URL='go:1';
+const REWARD_COOLDOWN=1*60*60*1000; // 6 ساعات
 
 // إضافة HTML المنبثق والزر العائم
 document.body.insertAdjacentHTML('beforeend',`
