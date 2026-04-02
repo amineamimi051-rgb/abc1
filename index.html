@@ -2004,7 +2004,7 @@ function useBombDefuse(){
   ownedBombDefuses--;
   updateInventoryUI();
   defuseBomb(true);
-  showToast(`🔧 أوقفت القنبلة بذراع القنبلة! +5🪙 [${ownedBombDefuses} متبقي]`);
+  showToast(`🔧 أوقفت القنبلة بذراع القنبلة! +2🪙 [${ownedBombDefuses} متبقي]`);
   saveGame();
 }
 
@@ -2084,8 +2084,8 @@ function defuseBomb(withWord=true){
 
   if(withWord){
     AudioSys.playFound && AudioSys.playFound();
-    showToast('💪 أوقفت القنبلة! +5🪙');
-    addCoins(5);
+    showToast('💪 أوقفت القنبلة! +2🪙');
+    addCoins(2);
   }
 }
 
