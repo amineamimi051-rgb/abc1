@@ -2594,19 +2594,19 @@ function doFound(p){
   if(combo>stats.highestCombo) stats.highestCombo=combo;
   updateComboUI();
   
-  let earn=15;     // 15 عملات لكل كلمة
-  let xpEarn=10;   // 10 XP لكل كلمة (بدل 15)
+  let earn=10;     // 15 عملات لكل كلمة
+  let xpEarn=5;   // 10 XP لكل كلمة (بدل 15)
   
   if(combo>=3){
-    earn+=5;       // كومبو يضيف 5
-    xpEarn+=3;
+    earn+=3;       // كومبو يضيف 5
+    xpEarn+=2;
     AudioSys.playCombo();
     showComboPopup();
   }
 
   if(p.golden){
     goldenFound=true;
-    earn+=20;   // كلمة ذهبية +20 عملة إضافية (سرية)
+    earn+=15;   // كلمة ذهبية +20 عملة إضافية (سرية)
     xpEarn+=10;
     AudioSys.playFound(); // نفس صوت الكلمة العادية
     triggerAch('golden'); // الإنجاز يُفتح بصمت
