@@ -3197,15 +3197,12 @@ function checkUrlReward(){
     case'freezes':ownedFreezes+=amount;                        message=`🎁 مكافأة يومية: +${amount} تجميد`;   break;
     case'xp':     addXp(amount);                               message=`🎁 مكافأة يومية: +${amount} خبرة`;    break;
     case'hearts': hearts=Math.min(maxHearts,hearts+amount);    message=`🎁 مكافأة يومية: +${amount} قلب`;     break;
+    case'bombdefuse': ownedBombDefuses+=amount;                message=`🎁 مكافأة يومية: +${amount} ذراع قنبلة`; break;
+    case'reveal': ownedReveals+=amount;                        message=`🎁 مكافأة يومية: +${amount} كشف كلمة`; break;
+    case'freezerobots': ownedFreezeRobots+=amount;            message=`🎁 مكافأة يومية: +${amount} تجميد روبوت`; break;
+    case'bombshield': ownedBombShields+=amount;               message=`🎁 مكافأة يومية: +${amount} درع قنبلة`; break;
     default: return;
   }
-  updateCoinsUI(); updateInventoryUI(); updateHeartsUI(); updateXpUI();
-  setTimeout(()=>{ showToast(message); AudioSys.playWin(); },1500);
-  saveGame();
-  window.history.replaceState({},document.title,window.location.pathname);
-}
-setTimeout(checkUrlReward,2000);
-
 // ══════════════════════════════════════════════
 // المنبثق اليومي - يظهر كل 6 ساعات
 // ══════════════════════════════════════════════
