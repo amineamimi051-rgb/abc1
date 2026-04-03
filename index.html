@@ -3203,6 +3203,12 @@ function checkUrlReward(){
     case'bombshield': ownedBombShields+=amount;               message=`🎁 مكافأة يومية: +${amount} درع قنبلة`; break;
     default: return;
   }
+  updateCoinsUI(); updateInventoryUI(); updateHeartsUI(); updateXpUI();
+  setTimeout(()=>{ showToast(message); AudioSys.playWin(); },1500);
+  saveGame();
+  window.history.replaceState({},document.title,window.location.pathname);
+}
+setTimeout(checkUrlReward,2000);
 // ══════════════════════════════════════════════
 // المنبثق اليومي - يظهر كل 6 ساعات
 // ══════════════════════════════════════════════
